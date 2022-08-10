@@ -54,6 +54,15 @@ dependencies:
   cached_network_image: ^3.2.1
   curved_navigation_bar: ^1.0.3
   firestore_search: ^0.1.9
+  weather: ^2.0.1
+  string_utils: ^0.2.3
+  basic_utils: ^4.5.2
+  external_app_launcher: ^3.1.0
+  weather_icons: ^3.0.0
+  package_manager: ^1.8.0
+  android_intent_plus: ^3.1.1
+  device_apps: ^2.2.0
+  liquid_pull_to_refresh: ^3.0.1
 
 
 dev_dependencies:

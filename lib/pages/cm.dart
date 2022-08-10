@@ -181,7 +181,7 @@ class _ChiefMinState extends State<ChiefMin> {
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
       floatingActionButton: Padding(
-        padding: EdgeInsets.only(bottom: 50,),
+        padding: const EdgeInsets.only(bottom: 50,),
         child: FloatingActionButton(
           heroTag: "one",
             onPressed: (){
@@ -190,8 +190,8 @@ class _ChiefMinState extends State<ChiefMin> {
             mini: true,
             disabledElevation: 5,
             clipBehavior: Clip.hardEdge,
-            child: Icon(Icons.search_sharp,color: Colors.black,),
-            backgroundColor: Colors.red.shade50
+            backgroundColor: Colors.red.shade50,
+            child: const Icon(Icons.search_sharp,color: Colors.black,)
         ),
       ),
       appBar: AppBar(

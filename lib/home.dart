@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firestore_search/firestore_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +19,7 @@ import 'package:splash/pages/weather.dart';
 import 'package:splash/screens/dark_profile.dart';
 import 'package:splash/screens/drawer.dart';
 import '../pages/cm.dart';
+import 'PagesForGov/intermediate.dart';
 import 'PagesGlobalCM/interm.dart';
 
 class HomePage extends StatefulWidget {
@@ -84,19 +86,11 @@ class _HomePageState extends State<HomePage> {
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
-                    child: StreamBuilder(
-                      stream: FirebaseFirestore.instance.collection('Details').doc('SNeTrknGJjrQWPvFD3QW').snapshots(),
-                      builder: (context,snapshot){
-                        if (!snapshot.hasData) {
-                          return  const Text("Loading");
-                        }
-                        else {
-                            var userDocument = snapshot.data;
-                            return Container(
+                    child:  Container(
                               padding: const EdgeInsets.only(bottom: 4),
                               alignment: Alignment.bottomCenter,
                               child: Text(
-                                "Available Information is available for ${"West Benngal"}",
+                                "Available Information is available for ${"West Bengal"}",
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
@@ -104,12 +98,9 @@ class _HomePageState extends State<HomePage> {
                                   backgroundColor: Colors.grey.shade200,
                                 ),
                                 textAlign: TextAlign.center,
-                              ),
-                            );
-                          }
-                        },
-                    )
-                  ),
+                              ),)
+
+                    ),
                   const SizedBox(
                     height: 15,
                   ),
@@ -144,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Governer()));
+                                      builder: (context) => const SecIntermediate()));
                             },
                             child: Container(
                               decoration: BoxDecoration(
