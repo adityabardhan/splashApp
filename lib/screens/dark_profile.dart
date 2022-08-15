@@ -4,9 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:splash/login.dart';
 import 'package:splash/screens/light_profile.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 import '../firebase/fireAuth.dart';
 import '../home.dart';
+import 'new file.dart';
 
 class ProfilePage extends StatefulWidget {
   String mail;
@@ -157,6 +159,20 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     onPressed: () {
+                      // SplashScreen(
+                      //     seconds: 3,
+                      //     title: Text("Feature is Not Available Now",textScaleFactor: 2,textAlign: TextAlign.center,style: GoogleFonts.amiri(
+                      //       fontWeight: FontWeight.w600,
+                      //     ),),
+                      //     image: Image.asset('assest/images/home_Image/comingSoon.jpg',fit:BoxFit.cover,),
+                      //     // loadingText: Text("Loading",textAlign: TextAlign.center,style: GoogleFonts.anekOdia(
+                      //     //   fontWeight: FontWeight.w500,
+                      //     // )),
+                      //     photoSize: 100.0,
+                      //     // loaderColor: Colors.blue,
+                      //     navigateAfterSeconds: ProfilePage(mail: '',)
+                      // );
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const ComingSoon()));
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                           content: Text(
                         "Feature Not Available Now",

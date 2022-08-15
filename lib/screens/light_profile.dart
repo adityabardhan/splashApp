@@ -7,6 +7,7 @@ import 'package:splash/firebase/fireAuth.dart';
 import '../home.dart';
 import '../login.dart';
 import 'dark_profile.dart';
+import 'new file.dart';
 
 class LightProfile extends StatefulWidget {
   String mail;
@@ -160,6 +161,7 @@ class _LightProfileState extends State<LightProfile> {
                           letterSpacing: 1),
                     ),
                     onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const ComingSoon()));
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                           content: Text(
                         "Feature Not Available Now",

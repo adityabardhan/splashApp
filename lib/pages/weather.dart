@@ -232,7 +232,7 @@ class _WeatherState extends State<Weather> {
                   FadeAnimation(
                     0.6,
                     Text(
-                      temp != null ? "$tempºC" : "Loading...",
+                      temp != null ? "$tempºC" : "",
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -250,7 +250,7 @@ class _WeatherState extends State<Weather> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            current != null ? current.toString() : "Loading",
+                            current != null ? current.toString() : "",
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -295,7 +295,7 @@ class _WeatherState extends State<Weather> {
                         size: 27,
                       ),
                       title: const Text("Current"),
-                      trailing: Text(desc != null ? desc.toString().toCapitalized() : "-"),
+                      trailing: Text(desc != null ? desc.toString().toTitleCase() : "-"),
                     ),
                   ),
                   FadeAnimation(

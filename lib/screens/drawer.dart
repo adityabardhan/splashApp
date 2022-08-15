@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:splash/screens/dark_profile.dart';
+import 'package:splash/screens/rateStars.dart';
 import 'package:splash/screens/update.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,6 +20,16 @@ class MainDrawer extends StatefulWidget {
 class _MainDrawerState extends State<MainDrawer> {
 
   User? user = FirebaseAuth.instance.currentUser;
+
+  _shareLink(String link) {
+    final box = context.findRenderObject() as RenderBox?;
+
+    return Share.share(
+        link,
+        subject: "Check out my new App!",
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size
+        );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,14 +97,14 @@ class _MainDrawerState extends State<MainDrawer> {
           ),
           Padding(
             padding: const EdgeInsets.only(left:10,right: 20),
-            child: ListTile(
-              leading: Icon(Icons.share_rounded,color: Colors.blueGrey[800],size: 25,),
-              title: Text("Share our App",style: GoogleFonts.anekLatin(
-                  fontSize: 18,fontWeight: FontWeight.w500,color: Colors.blueGrey[800]
-              ),),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage(mail: widget.mail)));
-              },
+            child: GestureDetector(
+              onTap: ()=>_shareLink("https://github.com/adityabardhan/splashApp/blob/883ed5650e34a8c0205cf4197aa6eae175513718/Civic%20Utility.apk"),
+              child: ListTile(
+                leading: Icon(Icons.share_rounded,color: Colors.blueGrey[800],size: 25,),
+                title: Text("Share our App",style: GoogleFonts.anekLatin(
+                    fontSize: 18,fontWeight: FontWeight.w500,color: Colors.blueGrey[800]
+                ),),
+              ),
             ),
           ),
           Padding(
@@ -103,7 +115,7 @@ class _MainDrawerState extends State<MainDrawer> {
                   fontSize: 18,fontWeight: FontWeight.w500,color: Colors.blueGrey[800]
               ),),
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage(mail: widget.mail)));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> const RateStars()));
               },
             ),
           ),
@@ -231,4 +243,3 @@ class _MainDrawerState extends State<MainDrawer> {
     }
   }
 }
-

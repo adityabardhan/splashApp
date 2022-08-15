@@ -8,11 +8,12 @@ class Population extends StatefulWidget {
 }
 
 class _PopulationState extends State<Population> {
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("Population list"),
+    return const Scaffold(
+      body: ExpansionPanelList(
+
       ),
     );
   }
