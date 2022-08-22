@@ -186,10 +186,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Population()));
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                  content: Text(
+                                    "UPGRADE TO PRO TO ACCESS THIS FEATURE",
+                                    style: TextStyle(
+                                      fontSize: 15,fontWeight: FontWeight.bold
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  )));
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -222,10 +226,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Facts()));
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                  content: Text(
+                                    "UPGRADE TO PRO TO ACCESS THIS FEATURE",
+                                    style: TextStyle(
+                                        fontSize: 15,fontWeight: FontWeight.bold
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  )));
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -240,10 +248,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Industry()));
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                  content: Text(
+                                    "UPGRADE TO PRO TO ACCESS THIS FEATURE",
+                                    style: TextStyle(
+                                        fontSize: 15,fontWeight: FontWeight.bold
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  )));
                             },
                             child: Container(
                               decoration: BoxDecoration(
